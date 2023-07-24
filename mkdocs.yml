@@ -3,14 +3,14 @@ strict: false
 
 nav:
   - 简介:
-    - index: index.md
+      - index: index.md
   - Leetcode:
-    - 集合中的元素: 集合中的元素.md
+      - 集合中的元素: 集合中的元素.md
 
 theme:
   name: material # 可选项还有些别的, material star 遥遥领先
   font:
-    code: 'Fira Code'
+    code: "Fira Code"
   features:
     - content.tabs.link
     - content.code.copy # 控制代码块的复制按钮
@@ -34,22 +34,21 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-markdown_extensions:  
+markdown_extensions:
   - pymdownx.superfences # 动态渲染所必需的
   - pymdownx.tabbed:
       alternate_style: true # 切换代码块所必需的
   - pymdownx.highlight:
-      use_pygments: true # 正确渲染代码块所必需的
+      use_pygments: false # 正确渲染代码块所必需的
       anchor_linenums: true
       linenums: true # 代码块行号
       pygments_lang_class: true
 
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/highlight.min.js
   - javascripts/highlight.js
 
 extra_css:
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/darcula.min.css
-  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css
-  
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/github.min.css
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/darcula.min.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/default.min.css
