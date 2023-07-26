@@ -5,7 +5,7 @@
 Java 现在跟 Oracle 姓了, 从 Oracle 官网下载:  
 <https://www.oracle.com/java/technologies/downloads/>
 
-在官网会摆出最新的版本(Java 20)和最新的 LTS 版本(Java 17)
+官网会摆出最新的版本(Java 20)和最新的 LTS 版本(Java 17)
 
 此外, 还可以下载归档(archive)版本, 比如 Java 8.  
 archive 版本列表:  
@@ -20,4 +20,5 @@ archive 版本列表:
 
 ## 安装
 
-MacOS 的默认安装地址 /Library/Java/JavaVirtualMachines
+MacOS 的默认安装地址:  
+/Library/Java/JavaVirtualMachines

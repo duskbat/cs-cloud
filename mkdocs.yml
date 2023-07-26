@@ -2,13 +2,12 @@ site_name: CS Cloud Wiki
 strict: false
 
 nav:
-  - 简介:
-      - index: index.md
+  - 简介: index.md
   - Leetcode:
-      - 集合中的元素: 集合中的元素.md
+      - 集合中的元素: leetcode/集合中的元素.md
   - Java:
-      - JDK: JDK下载.md
-      - HashMap: HashMap.md
+      - JDK: java/JDK下载.md
+      - HashMap: java/HashMap.md
 
 theme:
   name: material # 可选项还有些别的, material star 遥遥领先
