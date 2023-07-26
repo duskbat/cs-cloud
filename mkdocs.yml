@@ -6,11 +6,14 @@ nav:
       - index: index.md
   - Leetcode:
       - 集合中的元素: 集合中的元素.md
+  - Java:
+      - JDK: JDK下载.md
+      - HashMap: HashMap.md
 
 theme:
   name: material # 可选项还有些别的, material star 遥遥领先
   font:
-    code: "Fira Code"
+    code: Fira Code
   features:
     - content.tabs.link
     - content.code.copy # 控制代码块的复制按钮
@@ -49,6 +52,8 @@ extra_javascript:
   - javascripts/highlight.js
 
 extra_css:
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/github.min.css
+  - stylesheets/extra.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/github-gist.min.css
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/darcula.min.css
   # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/default.min.css
+  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/monokai.min.css
