@@ -8,6 +8,7 @@ nav:
   - Java:
       - JDK: java/JDK下载.md
       - HashMap: java/HashMap.md
+      - Map-API: java/Map-API.md
 
 theme:
   name: material # 可选项还有些别的, material star 遥遥领先
