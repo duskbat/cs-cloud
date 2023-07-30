@@ -1,6 +1,10 @@
 .md-typeset code,
 .md-typeset kbd,
 .md-typeset pre {
-  font-feature-settings: "kern", "liga";
-  font-variant-ligatures: normal;
+    font-feature-settings: "kern", "liga";
+    font-variant-ligatures: normal;
+}
+.md-grid {
+    /* max-width: 2560px; */
+    max-width: initial;
 }

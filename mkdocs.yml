@@ -36,7 +36,6 @@ nav:
           - 字符串匹配: leetcode/new/字符串匹配.md
           - 字符串编辑: leetcode/new/字符串编辑.md
           - 最长公共前缀: leetcode/new/最长公共前缀.md
-          - 集合中的元素: leetcode/new/集合中的元素.md
           - 多步操作最优解: leetcode/new/多步操作最优解.md
           - 多线程: leetcode/new/多线程.md
     - Java:
@@ -49,10 +48,12 @@ theme:
     font:
         code: Fira Code
     features:
+        - toc.follow # Table of contents 跟着滚
         - content.tabs.link
         - content.code.copy # 控制代码块的复制按钮
         - navigation.instant # 即时加载 XHR
         - navigation.tabs # 导航卡横向
+        - navigation.top # goto top
     palette:
         # Palette toggle for light mode
         - media: "(prefers-color-scheme: light)"
