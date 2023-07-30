@@ -25,6 +25,8 @@
 -   `HashMap(int initialCapacity)`  
     有参构造函数把 threshold 设为了 2 的整数倍
 
+    > 如果入参 cap=0, 则 thr=1
+
     ```java
     this.loadFactor = 0.75;
     this.threshold = tableSizeFor(initialCapacity);
@@ -281,7 +283,7 @@ final void treeifyBin(Node<K, V>[] tab, int hash) {
 
 1. 计算 新阈值和新容量
 
-    1. **无参初始化** `(thr==0)`  
+    1. **无参初始化** `(cap==0 && thr==0)`  
        新阈值 = 16\*0.75 = 12  
        新容量 = 16
     2. **含参初始化** `(cap==0 && thr>0)`  
@@ -293,7 +295,7 @@ final void treeifyBin(Node<K, V>[] tab, int hash) {
 
         1. 如果容量已经最大, 阈值拉满, return;
         2. 否则: 容量 2 倍扩容; 如果 2 倍还没最大, 并且原容量>=16:  
-           则 2 倍阈值
+           阈值 \*= 2
 
     如果新阈值没设定
 
@@ -301,7 +303,7 @@ final void treeifyBin(Node<K, V>[] tab, int hash) {
 
     - 新阈值 = 新容量 \* factor
 
-        > 在容量小于 16 的情况下, 每次都计算新阈值, 以快速扩容
+        > 在容量小于 16 的情况下, 每次都计算新阈值 `newThr=newCap*factor`, 以精确快速扩容(thr 直接\*2 不精确)
 
 2. 扩容
    按照新容量扩容
@@ -450,3 +452,15 @@ if (p.hash == hash &&
 1. 空数组
 2. `put()` 函数最后
 3. `treeifyBin()` 的时候 `if tab.length < MIN_TREEIFY_CAPACITY`, 则 `resize()`
+
+---
+
+## <center>tips<center/>
+
+可以试着 debug 一下, 关注一下 `resize()` 是如何工作的
+
+```java
+HashMap<Integer, Integer> map = new HashMap<>(0);
+map.put(1, 1);
+map.put(2, 2);
+```
