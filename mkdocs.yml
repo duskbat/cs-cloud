@@ -4,7 +4,7 @@ strict: false
 nav:
   - 简介: index.md
   - Leetcode:
-      - 集合中的元素: leetcode/集合中的元素.md
+      - 集合中的元素: leetcode/new/集合中的元素.md
   - Java:
       - JDK: java/JDK下载.md
       - HashMap: java/HashMap.md
