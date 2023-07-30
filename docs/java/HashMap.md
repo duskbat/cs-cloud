@@ -457,7 +457,7 @@ if (p.hash == hash &&
 
 ## <center>tips<center/>
 
-可以试着 debug 一下, 关注一下 `resize()` 是如何工作的
+可以试着 debug 一下, 关注一下 `resize()` 的细节
 
 ```java
 HashMap<Integer, Integer> map = new HashMap<>(0);
