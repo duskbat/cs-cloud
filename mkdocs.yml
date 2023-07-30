@@ -2,62 +2,95 @@ site_name: CS Cloud Wiki
 strict: false
 
 nav:
-  - 简介: index.md
-  - Leetcode:
-      - 集合中的元素: leetcode/new/集合中的元素.md
-  - Java:
-      - JDK: java/JDK下载.md
-      - HashMap: java/HashMap.md
-      - Map-API: java/Map-API.md
+    - 简介: index.md
+    - Leetcode:
+          - 集合中的元素: leetcode/new/集合中的元素.md
+          - 栈: leetcode/new/栈.md
+          - 树: leetcode/new/树.md
+          - 区间: leetcode/new/区间.md
+          - 回文: leetcode/new/回文.md
+          - 找数: leetcode/new/找数.md
+          - 排序: leetcode/new/排序.md
+          - 搜索: leetcode/new/搜索.md
+          - 数组: leetcode/new/数组.md
+          - 数论: leetcode/new/数论.md
+          - 构造: leetcode/new/构造.md
+          - 柱子: leetcode/new/柱子.md
+          - 矩阵: leetcode/new/矩阵.md
+          - 组合: leetcode/new/组合.md
+          - 结构: leetcode/new/结构.md
+          - 链表: leetcode/new/链表.md
+          - 中位数: leetcode/new/中位数.md
+          - 位运算: leetcode/new/位运算.md
+          - 可达性: leetcode/new/可达性.md
+          - 子序列: leetcode/new/子序列.md
+          - 字典序: leetcode/new/字典序.md
+          - 最大序: leetcode/new/最大序.md
+          - 前缀树Trie: leetcode/new/前缀树Trie.md
+          - 二分查找: leetcode/new/二分查找.md
+          - 拓扑排序: leetcode/new/拓扑排序.md
+          - 最长子串: leetcode/new/最长子串.md
+          - 二分猜答案: leetcode/new/二分猜答案.md
+          - 多少种不同: leetcode/new/多少种不同.md
+          - 子数组子串: leetcode/new/子数组子串.md
+          - 字符串匹配: leetcode/new/字符串匹配.md
+          - 字符串编辑: leetcode/new/字符串编辑.md
+          - 最长公共前缀: leetcode/new/最长公共前缀.md
+          - 集合中的元素: leetcode/new/集合中的元素.md
+          - 多步操作最优解: leetcode/new/多步操作最优解.md
+          - 多线程: leetcode/new/多线程.md
+    - Java:
+          - JDK: java/JDK下载.md
+          - HashMap: java/HashMap.md
+          - Map-API: java/Map-API.md
 
 theme:
-  name: material # 可选项还有些别的, material star 遥遥领先
-  font:
-    code: Fira Code
-  features:
-    - content.tabs.link
-    - content.code.copy # 控制代码块的复制按钮
-    - navigation.instant # 即时加载 XHR
-    - navigation.tabs # 导航卡横向
-  palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: black
-      accent: orange
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to dark mode
+    name: material # 可选项还有些别的, material star 遥遥领先
+    font:
+        code: Fira Code
+    features:
+        - content.tabs.link
+        - content.code.copy # 控制代码块的复制按钮
+        - navigation.instant # 即时加载 XHR
+        - navigation.tabs # 导航卡横向
+    palette:
+        # Palette toggle for light mode
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: black
+          accent: orange
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to dark mode
 
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: orange
-      toggle:
-        icon: material/weather-night
-        name: Switch to light mode
+        # Palette toggle for dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: black
+          accent: orange
+          toggle:
+              icon: material/weather-night
+              name: Switch to light mode
 markdown_extensions:
-  - pymdownx.superfences # 动态渲染所必需的
-  - pymdownx.tabbed:
-      alternate_style: true # 切换代码块所必需的
-  - pymdownx.highlight:
-      use_pygments: false # 正确渲染代码块所必需的
-      anchor_linenums: true
-      linenums: true # 代码块行号
-      pygments_lang_class: true
+    - pymdownx.superfences # 动态渲染所必需的
+    - pymdownx.tabbed:
+          alternate_style: true # 切换代码块所必需的
+    - pymdownx.highlight:
+          use_pygments: false # 正确渲染代码块所必需的
+          anchor_linenums: true
+          linenums: true # 代码块行号
+          pygments_lang_class: true
 
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/highlight.min.js
-  - javascripts/highlight.js
-  - javascripts/katex.js 
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/highlight.min.js
+    - javascripts/highlight.js
+    - javascripts/katex.js
+    - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+    - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 extra_css:
-  - stylesheets/extra.css
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/darcula.min.css
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/github-gist.min.css
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/default.min.css
-  # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/monokai.min.css
-
+    - stylesheets/extra.css
+    - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/darcula.min.css
+    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/github-gist.min.css
+    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/default.min.css
+    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/monokai.min.css
