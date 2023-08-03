@@ -77,11 +77,11 @@ markdown_extensions:
     - pymdownx.tabbed:
           alternate_style: true # 切换代码块所必需的
     - pymdownx.highlight:
-          use_pygments: false # 正确渲染代码块所必需的
-          anchor_linenums: true
-          linenums: true # 代码块行号
-          pygments_lang_class: true
-
+          use_pygments: false # 不使用 pygments, pygments的样式不够丰富
+          # pygments_style: "colorful"
+          # noclasses: true
+          # linenums: true
+          # auto_title: true
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/highlight.min.js
     - javascripts/highlight.js
@@ -91,7 +91,6 @@ extra_javascript:
 extra_css:
     - stylesheets/extra.css
     - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/darcula.min.css
+    - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/androidstudio.min.css
     # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/github-gist.min.css
-    # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/default.min.css
     # - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/styles/monokai.min.css
