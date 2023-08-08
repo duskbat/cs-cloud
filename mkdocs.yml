@@ -47,6 +47,7 @@ theme:
     name: material # 可选项还有些别的, material star 遥遥领先
     font:
         code: Fira Code
+        text: Inter
     features:
         - toc.follow # Table of contents 跟着滚
         - content.tabs.link
