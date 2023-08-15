@@ -4,6 +4,7 @@ strict: false
 nav:
     - 简介: index.md
     - Leetcode:
+          - leetcode: leetcode/new/leetcode.md
           - 集合中的元素: leetcode/new/集合中的元素.md
           - 栈: leetcode/new/栈.md
           - 树: leetcode/new/树.md
