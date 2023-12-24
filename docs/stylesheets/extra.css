@@ -8,3 +8,11 @@
     /* max-width: 2560px; */
     max-width: initial;
 }
+
+[data-md-color-scheme="default"] {
+    --md-code-bg-color: #2B2D30;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-code-bg-color: #2B2D30;
+}
