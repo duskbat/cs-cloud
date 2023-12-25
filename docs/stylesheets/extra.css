@@ -10,9 +10,5 @@
 }
 
 [data-md-color-scheme="default"] {
-    --md-code-bg-color: #2B2D30;
-}
-
-[data-md-color-scheme="slate"] {
-    --md-code-bg-color: #2B2D30;
+    --md-code-bg-color: transparent; /*透明背景色, 避免theme切换影响背景色*/
 }
