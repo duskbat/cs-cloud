@@ -22,3 +22,7 @@ archive 版本列表:
 
 MacOS 的默认安装地址:  
 /Library/Java/JavaVirtualMachines
+
+## 环境配置
+
+Java 的环境配置只需要将 `bin` 目录加到 `$PATH` 就可以了, 不需要配置 `CLASSPATH`. 推荐在启动 jvm 的时候通过参数`-cp`传入 `CLASSPATH`
