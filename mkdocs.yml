@@ -73,7 +73,11 @@ theme:
               icon: material/weather-night
               name: Switch to light mode
 markdown_extensions:
-    - pymdownx.superfences # 动态渲染所必需的
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
     - pymdownx.tabbed:
           alternate_style: true # 切换代码块所必需的
     - pymdownx.highlight:
