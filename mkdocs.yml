@@ -3,6 +3,7 @@ strict: false
 
 nav:
     - 简介: index.md
+    - 静态网站生成: static-web.md
     - Leetcode:
           - leetcode: leetcode/new/leetcode.md
           - 集合中的元素: leetcode/new/集合中的元素.md
@@ -40,6 +41,7 @@ nav:
           - 多线程: leetcode/new/多线程.md
     - Java:
           - JDK: java/JDK下载.md
+          - Java 发展史: java/java发展史.md
           - HashMap: java/HashMap.md
           - Map-API: java/Map-API.md
 
