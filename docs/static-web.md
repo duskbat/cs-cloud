@@ -13,7 +13,8 @@
 
 ## 代码高亮
 
-**后端代码高亮**可以选择 pygments, 说实话 pygments 效果一般般
+**后端代码高亮**可以选择 pygments, 说实话 pygments 效果一般般  
+预览: <https://swapoff.org/chroma/playground/>
 
 几个主流的**前端代码高亮**选择:
 
