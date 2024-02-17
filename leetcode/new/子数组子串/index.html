@@ -1,0 +1,1940 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E5%A4%9A%E5%B0%91%E7%A7%8D%E4%B8%8D%E5%90%8C/">
+      
+      
+        <link rel="next" href="../%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>子数组子串 - CS Cloud Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CS Cloud Wiki" class="md-header__button md-logo" aria-label="CS Cloud Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CS Cloud Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              子数组子串
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../static-web/" class="md-tabs__link">
+        
+  
+    
+  
+  静态网站生成
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../leetcode/" class="md-tabs__link">
+          
+  
+  Leetcode
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../java/JDK%E4%B8%8B%E8%BD%BD/" class="md-tabs__link">
+          
+  
+  Java
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CS Cloud Wiki" class="md-nav__button md-logo" aria-label="CS Cloud Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CS Cloud Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../static-web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    静态网站生成
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Leetcode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leetcode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    leetcode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    集合中的元素
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%A0%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    区间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%89%BE%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    找数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    搜索
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9E%84%E9%80%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    构造
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9F%B1%E5%AD%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    柱子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    矩阵
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BB%84%E5%90%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    组合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    链表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中位数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BD%8D%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    位运算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%AF%E8%BE%BE%E6%80%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    可达性
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    子序列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AD%97%E5%85%B8%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字典序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%80%E5%A4%A7%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最大序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%89%8D%E7%BC%80%E6%A0%91Trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    前缀树Trie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二分查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    拓扑排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最长子串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BA%8C%E5%88%86%E7%8C%9C%E7%AD%94%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二分猜答案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E5%B0%91%E7%A7%8D%E4%B8%8D%E5%90%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多少种不同
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    子数组子串
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    子数组子串
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      子数组最大和/积
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="子数组最大和/积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#53-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      53. 最大子数组和 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      152. 乘积最大子数组 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小窗口
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最小窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#76-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      76. 最小覆盖子串 hard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#209-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      209. 长度最小的子数组 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      窗口内最大值
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="窗口内最大值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#239-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      239. 滑动窗口最大值 hard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      能否由子串组成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="能否由子串组成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#139-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      139. 单词拆分 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串匹配
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E8%BE%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串编辑
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最长公共前缀
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E6%AD%A5%E6%93%8D%E4%BD%9C%E6%9C%80%E4%BC%98%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多步操作最优解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多线程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/JDK%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/java%E5%8F%91%E5%B1%95%E5%8F%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 发展史
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/HashMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/Map-API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Map-API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      子数组最大和/积
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="子数组最大和/积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#53-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      53. 最大子数组和 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      152. 乘积最大子数组 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小窗口
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最小窗口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#76-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      76. 最小覆盖子串 hard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#209-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      209. 长度最小的子数组 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      窗口内最大值
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="窗口内最大值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#239-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      239. 滑动窗口最大值 hard
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      能否由子串组成
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="能否由子串组成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#139-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      139. 单词拆分 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">子数组子串</h1>
+<p>通常考虑滑窗</p>
+<h2 id="_2">子数组最大和/积</h2>
+<h3 id="53-mid">53. 最大子数组和 mid</h3>
+<blockquote>
+<p>剑指 Offer 42. 连续子数组的最大和</p>
+</blockquote>
+<p>给你一个整数数组 nums，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>子数组 是数组中的一个连续部分。</p>
+<blockquote>
+<p>记录以当前元素为结束元素的子数组的最大和, 即可 DP</p>
+</blockquote>
+<p><strong>DP</strong></p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxSubArray</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> sum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">n</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> sum</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> n; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            sum</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(sum</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(res, sum</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>压缩</strong></p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxSubArray</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> sum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Integer.</span><span style="color: #50fa7b">MIN_VALUE</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> e : nums) {</span>
+<span style="color: #f8f8f2">            sum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> e </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(sum, </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(res, sum);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>分治</strong><br />
+线段树, 可以求任意区内的最大和, 建树的过程中直接求</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">static</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Node</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> lSum, rSum, max, sum;</span>
+
+<span style="color: #f8f8f2">        Node(</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> lSum, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> rSum, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> max, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> sum) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">lSum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> lSum; </span><span style="color: #6272a4">// 包含左端点最大和</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">rSum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> rSum; </span><span style="color: #6272a4">// 包含右端点最大和</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> max;   </span><span style="color: #6272a4">// 最大和</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">sum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> sum;   </span><span style="color: #6272a4">// 和</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxSubArray</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> getSum(nums, </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">).</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> Node </span><span style="color: #50fa7b">getSum</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> a, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> l, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> r) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (l </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> r) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node(a</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">l</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, a</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">l</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, a</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">l</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, a</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">l</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> m </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> l </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> (r </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> l </span><span style="color: #ff79c6">&gt;&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        Node lSub </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> getSum(a, l, m);</span>
+<span style="color: #f8f8f2">        Node rSub </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> getSum(a, m </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">, r);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> merge(lSub, rSub);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> Node </span><span style="color: #50fa7b">merge</span><span style="color: #f8f8f2">(Node l, Node r) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> sum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> l.</span><span style="color: #50fa7b">sum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> r.</span><span style="color: #50fa7b">sum</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> lSum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(l.</span><span style="color: #50fa7b">lSum</span><span style="color: #f8f8f2">, l.</span><span style="color: #50fa7b">sum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> r.</span><span style="color: #50fa7b">lSum</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> rSum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(r.</span><span style="color: #50fa7b">rSum</span><span style="color: #f8f8f2">, r.</span><span style="color: #50fa7b">sum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> l.</span><span style="color: #50fa7b">rSum</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(l.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">, r.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">), l.</span><span style="color: #50fa7b">rSum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> r.</span><span style="color: #50fa7b">lSum</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node(lSum, rSum, max, sum);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="152-mid">152. 乘积最大子数组 mid</h3>
+<p>给你一个整数数组 nums，请你找出数组中乘积最大的非空连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。</p>
+<p>测试用例的答案是一个 32-位 整数。</p>
+<p>子数组 是数组的连续子序列。</p>
+<blockquote>
+<p>DP 与 和最大和子数组 类似
+$max = max(maxdp[pre]<em>curr, mindp[pre]</em>curr, curr)$</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxProduct</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> maxA </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">n</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> minA </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">n</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        maxA</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        minA</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> ans </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> maxA</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> n; </span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">i) {</span>
+<span style="color: #f8f8f2">            maxA</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(maxA</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">*</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, minA</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">*</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">));</span>
+<span style="color: #f8f8f2">            minA</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">min</span><span style="color: #f8f8f2">(minA</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">*</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, Math.</span><span style="color: #50fa7b">min</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, maxA</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">*</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">));</span>
+<span style="color: #f8f8f2">            ans </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(ans, maxA</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> ans;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_3">最小窗口</h2>
+<h3 id="76-hard">76. 最小覆盖子串 hard</h3>
+<p>给你一个字符串 s, 一个字符串 t。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 ""。</p>
+<ul>
+<li>对于 t 中重复字符，我们寻找的子字符串中该字符数量必须不少于 t 中该字符数量。</li>
+<li>如果 s 中存在这样的子串，我们保证它是唯一的答案。</li>
+</ul>
+<p><strong>解法 滑动窗口</strong></p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> String </span><span style="color: #50fa7b">minWindow</span><span style="color: #f8f8f2">(String s, String t) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> need </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">128</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">char</span><span style="color: #f8f8f2"> c : t.</span><span style="color: #50fa7b">toCharArray</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            need</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">c</span><span style="color: #ff79c6">]++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// gap是需求的字符个数</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> j </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, gap </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> t.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">(), start </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, size </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Integer.</span><span style="color: #50fa7b">MAX_VALUE</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">char</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> arr </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> s.</span><span style="color: #50fa7b">toCharArray</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> arr.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (need</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">arr</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) gap</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            need</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">arr</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]]--</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #6272a4">// 缩</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (gap </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (need</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">arr</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">j</span><span style="color: #ff79c6">]]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                    need</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">arr</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">j</span><span style="color: #ff79c6">]]++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                    j</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                }</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> j </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> size) {</span>
+<span style="color: #f8f8f2">                    size </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> j </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                    start </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> j;</span>
+<span style="color: #f8f8f2">                }</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> size </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> Integer.</span><span style="color: #50fa7b">MAX_VALUE</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">?</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&quot;&quot;</span><span style="color: #f8f8f2"> : s.</span><span style="color: #50fa7b">substring</span><span style="color: #f8f8f2">(start, start </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> size);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="209-mid">209. 长度最小的子数组 mid</h3>
+<blockquote>
+<p>剑指 Offer II 008. 和大于等于 target 的最短子数组</p>
+</blockquote>
+<p>给定一个含有 n 个正整数的数组和一个正整数 target。</p>
+<p>找出该数组中满足其和 ≥ target 的长度最小的 连续子数组，并返回其长度。如果不存在符合条件的子数组，返回 0。</p>
+<p><strong>解法: 滑动窗口</strong></p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">minSubArrayLen</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> target, </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> l </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> sum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> r </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; r </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> n; r</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            sum </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">r</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (sum </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">l</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;=</span><span style="color: #f8f8f2"> target) {</span>
+<span style="color: #f8f8f2">                sum </span><span style="color: #ff79c6">-=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">l</span><span style="color: #ff79c6">++]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (sum </span><span style="color: #ff79c6">&gt;=</span><span style="color: #f8f8f2"> target) res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">min</span><span style="color: #f8f8f2">(res, r </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> l </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">?</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2"> : res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_4">窗口内最大值</h2>
+<blockquote>
+<p>需要一种数据结构, 维护窗口内的最大值
+考虑单调队列</p>
+</blockquote>
+<h3 id="239-hard">239. 滑动窗口最大值 hard</h3>
+<blockquote>
+<p>剑指 Offer 59 - I. 滑动窗口的最大值</p>
+</blockquote>
+<p>给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+返回 滑动窗口中的最大值。</p>
+<p><strong>解法 1: 优先队列 实时维护(超时)</strong></p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxSlidingWindow</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">        PriorityQueue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> PriorityQueue</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">((a, b) </span><span style="color: #ff79c6">-&gt;</span><span style="color: #f8f8f2"> b </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> a);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> k; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> k; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            res</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>解法 2: 优先队列 惰性维护堆顶</strong></p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxSlidingWindow</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        PriorityQueue</span><span style="color: #ff79c6">&lt;</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> PriorityQueue</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">((a, b) </span><span style="color: #ff79c6">-&gt;</span><span style="color: #f8f8f2"> a</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> b</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">?</span><span style="color: #f8f8f2"> b</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> a</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> : b</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> a</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">n </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> k; </span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">i) {</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(</span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2">{nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, i});</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> k; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> n; </span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">i) {</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(</span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2">{nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, i});</span>
+<span style="color: #f8f8f2">            </span><span style="color: #6272a4">// 只要堆顶元素没过期, 就不删</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (que.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;=</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">                que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            res</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>解法 3: 有序集合</strong></p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxSlidingWindow</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">        SortedMap</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer, Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> map </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> TreeMap</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">((a, b) </span><span style="color: #ff79c6">-&gt;</span><span style="color: #f8f8f2"> b </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> a);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> k; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            map.</span><span style="color: #50fa7b">merge</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">, Integer::sum);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> map.</span><span style="color: #50fa7b">firstKey</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> k; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (map.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">                map.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">else</span>
+<span style="color: #f8f8f2">                map.</span><span style="color: #50fa7b">merge</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">, Integer::sum);</span>
+
+<span style="color: #f8f8f2">            map.</span><span style="color: #50fa7b">merge</span><span style="color: #f8f8f2">(nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">, Integer::sum);</span>
+<span style="color: #f8f8f2">            res</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> map.</span><span style="color: #50fa7b">firstKey</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>解法 4: 单调队列</strong></p>
+<blockquote>
+<p>单调队列为什么可行?
+单调减队列 按序存储 idx, 对于单调减区间[s,e], 移除小于元素 e 的元素不会影响区间的最大值</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">maxSlidingWindow</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> nums, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// idx, 维护[idx]递减队列</span>
+<span style="color: #f8f8f2">        Deque</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayDeque</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">n </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> k; </span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">i) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #6272a4">// 单调减队列</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">getFirst</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                que.</span><span style="color: #50fa7b">removeFirst</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">addFirst</span><span style="color: #f8f8f2">(i);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">getLast</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> k; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> n; </span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">i) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #6272a4">// 单调减队列</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">getFirst</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                que.</span><span style="color: #50fa7b">removeFirst</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">addFirst</span><span style="color: #f8f8f2">(i);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #6272a4">// 缩小窗口</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (que.</span><span style="color: #50fa7b">getLast</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&lt;=</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">                que.</span><span style="color: #50fa7b">removeLast</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            res</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> k </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> nums</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">getLast</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_5">能否由子串组成</h2>
+<h3 id="139-mid">139. 单词拆分 mid</h3>
+<p>给你一个字符串 s 和一个字符串列表 wordDict 作为字典。请你判断是否可以利用字典中出现的单词拼接出 s。</p>
+<p>注意：不要求字典中出现的单词全部都使用，并且字典中的单词可以重复使用。</p>
+<p><strong>解法 1 DP</strong></p>
+<blockquote>
+<p>dp[i]: s[0,i] 是否由子串构成</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">wordBreak</span><span style="color: #f8f8f2">(String s, List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> wordDict) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> s.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        Set</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> set </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> HashSet</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">(wordDict);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">boolean</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> dp </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">n </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">; </span><span style="color: #6272a4">// 右侧开区间</span>
+<span style="color: #f8f8f2">        dp</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> n; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) { </span><span style="color: #6272a4">// 右端点</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> j </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; j </span><span style="color: #ff79c6">&lt;=</span><span style="color: #f8f8f2"> i; j</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) { </span><span style="color: #6272a4">// 左端点</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (dp</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">j</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> set.</span><span style="color: #50fa7b">contains</span><span style="color: #f8f8f2">(s.</span><span style="color: #50fa7b">substring</span><span style="color: #f8f8f2">(j, i </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">))) {</span>
+<span style="color: #f8f8f2">                    dp</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                    </span><span style="color: #ff79c6">break</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                }</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> dp</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">n</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>解法 2 DFS</strong></p>
+<blockquote>
+<p>DFS 搜到一段后递归搜下一段<br />
+可以记忆化剪枝, 记录哪些 start 不可用<br />
+substring 太慢, startWith 更好</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">wordBreak</span><span style="color: #f8f8f2">(String s, List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> wordDict) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">boolean</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> memo </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">s.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        Arrays.</span><span style="color: #50fa7b">fill</span><span style="color: #f8f8f2">(memo, </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> dfs(s, wordDict, </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, memo);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">dfs</span><span style="color: #f8f8f2">(String s, List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> wordDict, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> start, </span><span style="color: #8be9fd">boolean</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> memo) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (start </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> s.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">()) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">memo</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">start</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (String word : wordDict) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (s.</span><span style="color: #50fa7b">startsWith</span><span style="color: #f8f8f2">(word, start)) {</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (dfs(s, wordDict, start </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> word.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">(), memo)) {</span>
+<span style="color: #f8f8f2">                    </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                }</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        memo</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">start</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.follow", "content.tabs.link", "content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

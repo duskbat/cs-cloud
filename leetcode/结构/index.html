@@ -1,0 +1,1708 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>结构 - CS Cloud Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CS Cloud Wiki" class="md-header__button md-logo" aria-label="CS Cloud Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CS Cloud Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              结构
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../static-web/" class="md-tabs__link">
+        
+  
+    
+  
+  静态网站生成
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../new/leetcode/" class="md-tabs__link">
+          
+  
+  Leetcode
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../java/JDK%E4%B8%8B%E8%BD%BD/" class="md-tabs__link">
+          
+  
+  Java
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CS Cloud Wiki" class="md-nav__button md-logo" aria-label="CS Cloud Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CS Cloud Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../static-web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    静态网站生成
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Leetcode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/leetcode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    leetcode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    集合中的元素
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%A0%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    区间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%89%BE%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    找数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    搜索
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9E%84%E9%80%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    构造
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9F%B1%E5%AD%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    柱子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    矩阵
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E7%BB%84%E5%90%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    组合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    链表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中位数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    位运算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%8F%AF%E8%BE%BE%E6%80%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    可达性
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    子序列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%97%E5%85%B8%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字典序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9C%80%E5%A4%A7%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最大序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%89%8D%E7%BC%80%E6%A0%91Trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    前缀树Trie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二分查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    拓扑排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最长子串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%BA%8C%E5%88%86%E7%8C%9C%E7%AD%94%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二分猜答案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%A4%9A%E5%B0%91%E7%A7%8D%E4%B8%8D%E5%90%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多少种不同
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%90%E6%95%B0%E7%BB%84%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    子数组子串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串匹配
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E8%BE%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串编辑
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最长公共前缀
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%A4%9A%E6%AD%A5%E6%93%8D%E4%BD%9C%E6%9C%80%E4%BC%98%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多步操作最优解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多线程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/JDK%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/java%E5%8F%91%E5%B1%95%E5%8F%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 发展史
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/HashMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/Map-API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Map-API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大队列
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最大队列">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#59-ii-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      面试题 59 - II. 队列的最大值 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trie (前缀树)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trie (前缀树)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#648-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      648. 单词替换 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#820-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      820. 单词的压缩编码 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#677-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      677. 键值映射 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      容器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#380-o1" class="md-nav__link">
+    <span class="md-ellipsis">
+      380. O(1) 时间插入、删除和获取随机元素
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      LRU
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LRU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#933-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      933. 最近的请求次数 easy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>结构</h1>
+
+<h2 id="_1">最大队列</h2>
+<h3 id="59-ii-mid">面试题 59 - II. 队列的最大值 mid</h3>
+<p>请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数 max_value、push_back 和 pop_front 的均摊时间复杂度都是 O(1)。</p>
+<p>若队列为空，pop_front 和 max_value 需要返回 -1</p>
+<blockquote>
+<p>单调减队列, 头部最大</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">MaxQueue</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    Deque</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">max_value</span><span style="color: #f8f8f2">() {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (max.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> max.</span><span style="color: #50fa7b">getFirst</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">push_back</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> value) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">max.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> max.</span><span style="color: #50fa7b">getLast</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> value) {</span>
+<span style="color: #f8f8f2">            max.</span><span style="color: #50fa7b">removeLast</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        max.</span><span style="color: #50fa7b">addLast</span><span style="color: #f8f8f2">(value);</span>
+<span style="color: #f8f8f2">        que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(value);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">pop_front</span><span style="color: #f8f8f2">() {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 关键在这, 如何确定单调队列中的最大元素还在队列中</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (res </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> max.</span><span style="color: #50fa7b">getFirst</span><span style="color: #f8f8f2">()) max.</span><span style="color: #50fa7b">removeFirst</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="trie">Trie (前缀树)</h2>
+<h3 id="648-mid">648. 单词替换 mid</h3>
+<p>在英语中，我们有一个叫做 词根(root) 的概念，可以词根后面添加其他一些词组成另一个较长的单词——我们称这个词为 继承词(successor)。例如，词根 an，跟随着单词 other(其他)，可以形成新的单词 another(另一个)。</p>
+<p>现在，给定一个由许多词根组成的词典 dictionary 和一个用空格分隔单词形成的句子 sentence。你需要将句子中的所有继承词用词根替换掉。如果继承词有许多可以形成它的词根，则用最短的词根替换它。</p>
+<p>你需要输出替换之后的句子。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">static</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Node</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">        Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> table </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">26</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> isLeaf;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 词根树</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">final</span><span style="color: #f8f8f2"> Node root </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node();</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> String </span><span style="color: #50fa7b">replaceWords</span><span style="color: #f8f8f2">(List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> dictionary, String sentence) {</span>
+<span style="color: #f8f8f2">        String</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> words </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> sentence.</span><span style="color: #50fa7b">split</span><span style="color: #f8f8f2">(</span><span style="color: #bd93f9">&quot; &quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (String s : dictionary) {</span>
+<span style="color: #f8f8f2">            Node p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">char</span><span style="color: #f8f8f2"> c : s.</span><span style="color: #50fa7b">toCharArray</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">                    p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node();</span>
+<span style="color: #f8f8f2">                p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            p.</span><span style="color: #50fa7b">isLeaf</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        StringBuilder sb </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> StringBuilder();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (String w : words) {</span>
+<span style="color: #f8f8f2">            sb.</span><span style="color: #50fa7b">append</span><span style="color: #f8f8f2">(findRoot(w)).</span><span style="color: #50fa7b">append</span><span style="color: #f8f8f2">(</span><span style="color: #bd93f9">&quot; &quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> sb.</span><span style="color: #50fa7b">toString</span><span style="color: #f8f8f2">().</span><span style="color: #50fa7b">trim</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> String </span><span style="color: #50fa7b">findRoot</span><span style="color: #f8f8f2">(String word) {</span>
+<span style="color: #f8f8f2">        Node p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> cnt </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">char</span><span style="color: #f8f8f2"> c : word.</span><span style="color: #50fa7b">toCharArray</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            cnt</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> word;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">isLeaf</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> word.</span><span style="color: #50fa7b">substring</span><span style="color: #f8f8f2">(</span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, cnt);</span>
+<span style="color: #f8f8f2">            p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> word;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="820-mid">820. 单词的压缩编码 mid</h3>
+<p>单词数组 words 的 有效编码 由任意助记字符串 s 和下标数组 indices 组成，且满足：</p>
+<ul>
+<li>words.length == indices.length</li>
+<li>助记字符串 s 以 '#' 字符结尾</li>
+<li>对于每个下标 indices[i] ，s 的一个从 indices[i] 开始、到下一个 '#' 字符结束（但不包括 '#'）的 子字符串 恰好与 words[i] 相等</li>
+</ul>
+<p>给你一个单词数组 words ，返回成功对 words 进行编码的最小助记字符串 s 的长度 。</p>
+<blockquote>
+<p>分叉的不能共享前缀 aTime bTime</p>
+<ul>
+<li>word 需要倒序建树;</li>
+<li>如果不先排序的话, 很难在建树的过程中统计, 主要问题是分叉的不能共享前缀;</li>
+<li>我们可以先建树再统计, 可以建树之后 DFS; 也可以存储所有叶子节点, 然后遍历统计;</li>
+</ul>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">static</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Node</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">        Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> table </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">26</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> isLeaf;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 分叉的不能共享前缀</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">minimumLengthEncoding</span><span style="color: #f8f8f2">(String</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> words) {</span>
+<span style="color: #f8f8f2">        Node root </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node();</span>
+<span style="color: #f8f8f2">        Map</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Node, Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> map </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> HashMap</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (String s : words) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> cnt </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            Node p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> s.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&gt;=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                cnt</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> idx </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> s.</span><span style="color: #50fa7b">charAt</span><span style="color: #f8f8f2">(i) </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                    p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node();</span>
+<span style="color: #f8f8f2">                    </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (i </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) map.</span><span style="color: #50fa7b">put</span><span style="color: #f8f8f2">(p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">, cnt);</span>
+<span style="color: #f8f8f2">                } </span><span style="color: #ff79c6">else</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (i </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">isLeaf</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                    p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">isLeaf</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                    map.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">(p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">                }</span>
+<span style="color: #f8f8f2">                p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            p.</span><span style="color: #50fa7b">isLeaf</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd; font-style: italic">var</span><span style="color: #f8f8f2"> entry : map.</span><span style="color: #50fa7b">entrySet</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> entry.</span><span style="color: #50fa7b">getValue</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="677-mid">677. 键值映射 mid</h3>
+<blockquote>
+<p>剑指 Offer II 066. 单词之和</p>
+</blockquote>
+<p>设计一个 map ，满足以下几点:</p>
+<p>字符串表示键，整数表示值
+返回具有前缀等于给定字符串的键的值的总和
+实现一个 MapSum 类：</p>
+<ul>
+<li>void insert(String key, int val) 插入 key-val 键值对，字符串表示键 key ，整数表示值 val 。如果键 key 已经存在，那么原来的键值对 key-value 将被替代成新的键值对。</li>
+<li>int sum(string prefix) 返回所有以该前缀 prefix 开头的键 key 的值的总和。</li>
+</ul>
+<blockquote>
+<p>前缀树
+找到前缀最后的 char, 从那 dfs
+需要一个可变的引用 int[0] = {0}</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">MapSum</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">static</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Node</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">        Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> table </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">26</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> isLeaf;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> val;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">final</span><span style="color: #f8f8f2"> Node root </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node();</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">insert</span><span style="color: #f8f8f2">(String key, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> val) {</span>
+<span style="color: #f8f8f2">        Node p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">char</span><span style="color: #f8f8f2"> c : key.</span><span style="color: #50fa7b">toCharArray</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> idx </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">                p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node();</span>
+<span style="color: #f8f8f2">            p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        p.</span><span style="color: #50fa7b">isLeaf</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        p.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> val;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">sum</span><span style="color: #f8f8f2">(String pre) {</span>
+<span style="color: #f8f8f2">        Node p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">char</span><span style="color: #f8f8f2"> c : pre.</span><span style="color: #50fa7b">toCharArray</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> idx </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> c </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #bd93f9">&#39;a&#39;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">table</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">idx</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> arr </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> {</span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">};</span><span style="color: #6272a4">// 这里初始化挺有意思</span>
+<span style="color: #f8f8f2">        dfs(p, arr);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> arr</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">dfs</span><span style="color: #f8f8f2">(Node p, </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> res) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">isLeaf</span><span style="color: #f8f8f2">) res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (Node n : p.</span><span style="color: #50fa7b">table</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (n </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) dfs(n, res);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_2">容器</h2>
+<h3 id="380-o1">380. O(1) 时间插入、删除和获取随机元素</h3>
+<blockquote>
+<p>剑指 Offer II 030. 插入、删除和随机访问都是 O(1) 的容器</p>
+</blockquote>
+<p>设计一个支持在平均 时间复杂度 O(1)下，执行以下操作的数据结构：</p>
+<ul>
+<li>insert(val)：当元素 val 不存在时返回 true ，并向集合中插入该项，否则返回 false。</li>
+<li>remove(val)：当元素 val 存在时返回 true ，并从集合中移除该项，否则返回 false。</li>
+<li>getRandom：随机返回现有集合中的一项。每个元素应该有 相同的概率 被返回。</li>
+</ul>
+<blockquote>
+<p>删除的时候, 将最后一个元素弄到要删除的元素的位置上</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">RandomizedSet</span><span style="color: #f8f8f2"> {</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">final</span><span style="color: #f8f8f2"> List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> list </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">final</span><span style="color: #f8f8f2"> Map</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer, Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> map </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> HashMap</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">final</span><span style="color: #f8f8f2"> Random random </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Random();</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">insert</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> val) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (map.</span><span style="color: #50fa7b">containsKey</span><span style="color: #f8f8f2">(val)) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        list.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(val);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> idx </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        map.</span><span style="color: #50fa7b">put</span><span style="color: #f8f8f2">(val, idx);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> val) {</span>
+<span style="color: #f8f8f2">        Integer oldIdx </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> map.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">(val);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (oldIdx </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        Integer tail </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">(list.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (tail </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> val) {</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">set</span><span style="color: #f8f8f2">(oldIdx, tail);</span>
+<span style="color: #f8f8f2">            map.</span><span style="color: #50fa7b">put</span><span style="color: #f8f8f2">(tail, oldIdx);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">getRandom</span><span style="color: #f8f8f2">() {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(random.</span><span style="color: #50fa7b">nextInt</span><span style="color: #f8f8f2">(list.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">()));</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="lru">LRU</h2>
+<h3 id="933-easy">933. 最近的请求次数 easy</h3>
+<p>写一个 RecentCounter 类来计算特定时间范围内最近的请求。</p>
+<p>请你实现 RecentCounter 类：</p>
+<ul>
+<li>RecentCounter() 初始化计数器，请求数为 0 。</li>
+<li>int ping(int t) 在时间 t 添加一个新请求，其中 t 表示以毫秒为单位的某个时间，并返回过去 3000 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 [t-3000, t] 内发生的请求数。</li>
+</ul>
+<p>保证 每次对 ping 的调用都使用比之前更大的 t 值。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">RecentCounter</span><span style="color: #f8f8f2"> {</span>
+
+<span style="color: #f8f8f2">    Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayDeque</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">ping</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> t) {</span>
+<span style="color: #f8f8f2">        que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(t);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> t </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">3000</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "content.tabs.link", "content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>

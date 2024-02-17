@@ -1,0 +1,2585 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>树 - CS Cloud Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CS Cloud Wiki" class="md-header__button md-logo" aria-label="CS Cloud Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CS Cloud Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              树
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  简介
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../static-web/" class="md-tabs__link">
+        
+  
+    
+  
+  静态网站生成
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../new/leetcode/" class="md-tabs__link">
+          
+  
+  Leetcode
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../java/JDK%E4%B8%8B%E8%BD%BD/" class="md-tabs__link">
+          
+  
+  Java
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CS Cloud Wiki" class="md-nav__button md-logo" aria-label="CS Cloud Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CS Cloud Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../static-web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    静态网站生成
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Leetcode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/leetcode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    leetcode
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    集合中的元素
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%A0%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    栈
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%A0%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    树
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%8C%BA%E9%97%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    区间
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%89%BE%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    找数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    搜索
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%95%B0%E8%AE%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9E%84%E9%80%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    构造
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9F%B1%E5%AD%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    柱子
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    矩阵
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E7%BB%84%E5%90%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    组合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    链表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中位数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%BD%8D%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    位运算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%8F%AF%E8%BE%BE%E6%80%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    可达性
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%90%E5%BA%8F%E5%88%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    子序列
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%97%E5%85%B8%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字典序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9C%80%E5%A4%A7%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最大序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%89%8D%E7%BC%80%E6%A0%91Trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    前缀树Trie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二分查找
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    拓扑排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最长子串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E4%BA%8C%E5%88%86%E7%8C%9C%E7%AD%94%E6%A1%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二分猜答案
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%A4%9A%E5%B0%91%E7%A7%8D%E4%B8%8D%E5%90%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多少种不同
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%90%E6%95%B0%E7%BB%84%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    子数组子串
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串匹配
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E8%BE%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字符串编辑
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最长公共前缀
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%A4%9A%E6%AD%A5%E6%93%8D%E4%BD%9C%E6%9C%80%E4%BC%98%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多步操作最优解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多线程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/JDK%E4%B8%8B%E8%BD%BD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/java%E5%8F%91%E5%B1%95%E5%8F%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java 发展史
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/HashMap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HashMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/Map-API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Map-API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      构造
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#617-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      617. 合并二叉树 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offer-ii-043-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      剑指 Offer II 043. 往完全二叉树添加节点 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      找值
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="找值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#437-iii-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      437. 路径总和 III mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#501-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      501. 二叉搜索树中的众数 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#653-iv-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      653. 两数之和 IV easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#671-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      671. 二叉树中第二小的节点 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#700-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      700. 二叉搜索树中的搜索 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offer-54-k-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      剑指 Offer 54. 二叉搜索树的第k大节点 easy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      求臂展
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="求臂展">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#543-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      543. 二叉树的直径 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#687-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      687. 最长同值路径 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2385-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2385. 感染二叉树需要的总时间 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      翻转
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="翻转">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2415-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2415. 反转二叉树的奇数层 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="递归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#572-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      572. 另一棵树的子树 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offer-26-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      剑指 Offer 26. 树的子结构 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#404-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      404. 左叶子之和 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#814-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      814. 二叉树剪枝 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      层序遍历
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="层序遍历">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offer-32-iii-iii-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      剑指 Offer 32 - III. 从上到下打印二叉树 III mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#637-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      637. 二叉树的层平均值 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      513. 找树左下角的值 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#515-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      515. 在每个树行中找最大值 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      前中后序遍历
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="前中后序遍历">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#897-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      897. 递增顺序搜索树 easy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#590-n-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      590. N 叉树的后序遍历 easy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bst" class="md-nav__link">
+    <span class="md-ellipsis">
+      二叉查找树 BST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二叉查找树 BST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offer-ii-053-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      剑指 Offer II 053. 二叉搜索树中的中序后继 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证遍历顺序合法性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="验证遍历顺序合法性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offer-33-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      剑指 Offer 33. 二叉搜索树的后序遍历序列 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#669-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      669. 修剪二叉搜索树 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#538-1038-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      538. 1038. 把二叉搜索树转换为累加树 mid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#530-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      530. 二叉搜索树的最小绝对差 easy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      修改树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="修改树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offer-36-mid" class="md-nav__link">
+    <span class="md-ellipsis">
+      剑指 Offer 36. 二叉搜索树与双向链表 mid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>树</h1>
+
+<h2 id="_1">构造</h2>
+<h3 id="617-easy">617. 合并二叉树 easy</h3>
+<p>给你两棵二叉树： root1 和 root2 。</p>
+<p>想象一下，当你将其中一棵覆盖到另一棵之上时，两棵树上的一些节点将会重叠（而另一些不会）。你需要将这两棵树合并成一棵新二叉树。合并的规则是：如果两个节点重叠，那么将这两个节点的值相加作为合并后节点的新值；否则，不为 null
+的节点将直接作为新二叉树的节点。</p>
+<p>返回合并后的二叉树。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">mergeTrees</span><span style="color: #f8f8f2">(TreeNode root1, TreeNode root2) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root1 </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root2;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root2 </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root1;</span>
+<span style="color: #f8f8f2">        root1.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> root2.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        root1.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> mergeTrees(root1.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, root2.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        root1.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> mergeTrees(root1.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, root2.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root1;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="offer-ii-043-mid">剑指 Offer II 043. 往完全二叉树添加节点 mid</h3>
+<p>完全二叉树是每一层（除最后一层外）都是完全填充（即，节点数达到最大，第 n 层有 2n-1 个节点）的，并且所有的节点都尽可能地集中在左侧。</p>
+<p>设计一个用完全二叉树初始化的数据结构 CBTInserter，它支持以下几种操作：</p>
+<ul>
+<li>CBTInserter(TreeNode root)使用根节点为 root 的给定树初始化该数据结构；</li>
+<li>CBTInserter.insert(int v)向树中插入一个新节点，节点类型为 TreeNode，值为 v 。使树保持完全二叉树的状态，并返回插入的新节点的父节点的值；</li>
+<li>CBTInserter.get_root() 将返回树的根节点。</li>
+</ul>
+<blockquote>
+<p>用一个容器存放备选的 parent</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">CBTInserter</span><span style="color: #f8f8f2"> {</span>
+
+<span style="color: #f8f8f2">    Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> notFull </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    TreeNode root;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">CBTInserter</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">root</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">        Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root);</span>
+<span style="color: #f8f8f2">        TreeNode node;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            node </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">||</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) notFull.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">insert</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> v) {</span>
+<span style="color: #f8f8f2">        TreeNode child </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> TreeNode(v);</span>
+<span style="color: #f8f8f2">        TreeNode parent </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> notFull.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (parent.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">            parent.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> child;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">else</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">            parent.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> child;</span>
+<span style="color: #f8f8f2">            notFull.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        notFull.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(child);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> parent.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">get_root</span><span style="color: #f8f8f2">() {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_2">找值</h2>
+<h3 id="437-iii-mid">437. 路径总和 III mid</h3>
+<p>给定一个二叉树的根节点 root ，和一个整数(有负数) targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。</p>
+<p>路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。</p>
+<blockquote>
+<p>回溯 + 前缀和
+在当前路径中: 保存所有的前缀和 &amp; 维护从根节点到当前节点的前缀和</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">final</span><span style="color: #f8f8f2"> Map</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Long, Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> prefix </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> HashMap</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> targetSum;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">pathSum</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> targetSum) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">targetSum</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> targetSum;</span>
+<span style="color: #f8f8f2">        prefix.</span><span style="color: #50fa7b">put</span><span style="color: #f8f8f2">(</span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">L, </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> dfs(root, </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 返回 子树中满足的数量</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">dfs</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">long</span><span style="color: #f8f8f2"> total) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        total </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 根节点到当前值的前缀和 - 目标值</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> prefix.</span><span style="color: #50fa7b">getOrDefault</span><span style="color: #f8f8f2">(total </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> targetSum, </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        prefix.</span><span style="color: #50fa7b">merge</span><span style="color: #f8f8f2">(total, </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">, Integer::sum);</span>
+<span style="color: #f8f8f2">        res </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> dfs(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, total);</span>
+<span style="color: #f8f8f2">        res </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> dfs(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, total);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 消除当前路径对其他路径的影响</span>
+<span style="color: #f8f8f2">        prefix.</span><span style="color: #50fa7b">merge</span><span style="color: #f8f8f2">(total, </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">, Integer::sum);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="501-easy">501. 二叉搜索树中的众数 easy</h3>
+<p>给你一个含重复值的二叉搜索树（BST）的根节点 root ，找出并返回 BST 中的所有 众数（即，出现频率最高的元素）。</p>
+<p>如果树中有不止一个众数，可以按 任意顺序 返回。</p>
+<blockquote>
+<p>中序遍历BST 从小到大
+维护pre, pre的重复数, 最大重复数, 结果集</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> list </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 前值</span>
+<span style="color: #f8f8f2">    Integer pre;</span>
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 当前值的重复数</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> cnt </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 最大重复数</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">findMode</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">find</span><span style="color: #f8f8f2">(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">list.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">()</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">(); i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            res</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(i);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">find</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        find(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (pre </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> pre </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">cnt;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">else</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">            cnt </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            pre </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (cnt </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> max)</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(pre);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">else</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (cnt </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> max) {</span>
+<span style="color: #f8f8f2">            max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> cnt;</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">clear</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        find(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="653-iv-easy">653. 两数之和 IV easy</h3>
+<p>给定一个二叉搜索树 root 和一个目标结果 k，如果 BST 中存在两个元素且它们的和等于给定的目标结果，则返回 true。</p>
+<blockquote>
+<p>利用 BST 也需要额外的空间, 直接用 set 简单方便</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    Set</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> set </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> HashSet</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">findTarget</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (set.</span><span style="color: #50fa7b">contains</span><span style="color: #f8f8f2">(k </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">)) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        set.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> findTarget(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, k) </span><span style="color: #ff79c6">||</span><span style="color: #f8f8f2"> findTarget(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, k);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="671-easy">671. 二叉树中第二小的节点 easy</h3>
+<p>给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。</p>
+<p>更正式地说，即 root.val = min(root.left.val, root.right.val) 总成立。</p>
+<p>给出这样的一个二叉树，你需要输出所有节点中的 第二小的值 。</p>
+<p>如果第二小的值不存在的话，输出 -1 。</p>
+<blockquote>
+<p>根节点的两个子节点至少有一个跟根节点一样, 要遍历几乎所有节点, 有剪枝</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> min;</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">findSecondMinimumValue</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        min </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        dfs(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 这里面很有技巧</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">dfs</span><span style="color: #f8f8f2">(TreeNode node) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (res </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;=</span><span style="color: #f8f8f2"> res) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 此时, 未赋值 或者 val &lt; res</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> min) {</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// val == min</span>
+<span style="color: #f8f8f2">        dfs(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        dfs(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="700-easy">700. 二叉搜索树中的搜索 easy</h3>
+<p>给定二叉搜索树（BST）的根节点 root 和一个整数值 val。</p>
+<p>你需要在 BST 中找到节点值等于 val 的节点。 返回以该节点为根的子树。 如果节点不存在，则返回 null 。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">searchBST</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> val) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> search(root, val);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">search</span><span style="color: #f8f8f2">(TreeNode node, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> val) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> val)</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> node;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> val)</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> search(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, val);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">else</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> search(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, val);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="offer-54-k-easy">剑指 Offer 54. 二叉搜索树的第k大节点 easy</h3>
+<p>给定一棵二叉搜索树，请找出其中第 k 大的节点的值。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> cnt;</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">kthLargest</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> k) {</span>
+<span style="color: #f8f8f2">        cnt </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> k;</span>
+<span style="color: #f8f8f2">        count(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">count</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        count(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        cnt</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (cnt </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        count(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_3">求臂展</h2>
+<h3 id="543-easy">543. 二叉树的直径 easy</h3>
+<p>给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。</p>
+<blockquote>
+<p>维护全局max, 函数返回最大深度</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">diameterOfBinaryTree</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        deep(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> max;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">deep</span><span style="color: #f8f8f2">(TreeNode node) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> left </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> deep(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> right </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> deep(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> len </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> left </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> right;</span>
+<span style="color: #f8f8f2">        max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(max, len);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(left, right);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="687-mid">687. 最长同值路径 mid</h3>
+<p>给定一个二叉树的 root ，返回 最长的路径的长度 ，这个路径中的每个节点具有相同值。 这条路径可以经过也可以不经过根节点。</p>
+<p>两个节点之间的路径长度 由它们之间的边数表示。</p>
+<blockquote>
+<p>在递归中, 每个节点都作为两个角色: 一个是根节点, 一个是链路中的节点.
+需要两个值, 一个是单边链路长度, 一个是作为根节点的臂展. 所以需要维护全局 ans</p>
+<p>只关注臂展即可, 不需要关注节点数</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> ans;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">longestUnivaluePath</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        arrowLength(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> ans;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">arrowLength</span><span style="color: #f8f8f2">(TreeNode node) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 注意, 必须后续遍历, 左右的遍历先, 否则ans不是最新的</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> left </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> arrowLength(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> right </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> arrowLength(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> arrowLeft </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> arrowRight </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">) arrowLeft </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> left </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">) arrowRight </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> right </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        ans </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(ans, arrowLeft </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> arrowRight);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(arrowLeft, arrowRight);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="2385-mid">2385. 感染二叉树需要的总时间 mid</h3>
+<p>给你一棵二叉树的根节点 root ，二叉树中节点的值 互不相同 。另给你一个整数 start 。在第 0 分钟，感染 将会从值为 start 的节点开始爆发。</p>
+<p>每分钟，如果节点满足以下全部条件，就会被感染：</p>
+<ul>
+<li>节点此前还没有感染。</li>
+<li>节点与一个已感染节点相邻。</li>
+</ul>
+<p>返回感染整棵树需要的分钟数。</p>
+<blockquote>
+<p>max(start的深度, 所有start父节点到start的深度+父节点另一子树的深度)
+通常会想到, 先BFS找到start, 同时标记所有父节点, 然后再计算; 这样会有重复计算</p>
+<p>更巧妙一点, 后续遍历整个树, 在每个节点中, 如果子树找到了start, 返回深度的负数, 更新 max</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, start </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">amountOfTime</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> start) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">this</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">start</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> start;</span>
+<span style="color: #f8f8f2">        goNext(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">goNext</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> left </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> goNext(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> right </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> goNext(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> start) {</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(res, Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(left, right));</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (left </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(res, right </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> left);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> left </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (right </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(res, left </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> right);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> right </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(left, right) </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_4">翻转</h2>
+<h3 id="2415-mid">2415. 反转二叉树的奇数层 mid</h3>
+<p>给你一棵 完美 二叉树的根节点 root ，请你反转这棵树中每个 奇数 层的节点值。</p>
+<ul>
+<li>例如，假设第 3 层的节点值是 [2,1,3,4,7,11,29,18] ，那么反转后它应该变成 [18,29,11,7,4,3,1,2] 。</li>
+</ul>
+<p>反转后，返回树的根节点。</p>
+<p>完美 二叉树需满足：二叉树的所有父节点都有两个子节点，且所有叶子节点都在同一层。</p>
+<p>节点的 层数 等于该节点到根节点之间的边数。</p>
+<p><strong>解法1: DFS</strong></p>
+<blockquote>
+<p>DFS 递归</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">reverseOddLevels</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        reverseOddLevels(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">reverseOddLevels</span><span style="color: #f8f8f2">(TreeNode l, TreeNode r, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> level) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (l </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (level </span><span style="color: #ff79c6">%</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">2</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> tmp </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> l.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            l.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> r.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            r.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> tmp;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        reverseOddLevels(l.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, r.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, level </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        reverseOddLevels(l.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, r.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, level </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>解法2: BFS</strong></p>
+<blockquote>
+<p>BFS</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">reverseOddLevels</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        Deque</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> flag </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> size </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            flag</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> list </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (size</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                TreeNode node </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">                list.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node);</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">continue</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">                que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (flag </span><span style="color: #ff79c6">%</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">2</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">) revert(list);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">revert</span><span style="color: #f8f8f2">(List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> list) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, j </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> j; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">, j</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> t </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(i).</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(i).</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(j).</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(j).</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> t;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_5">递归</h2>
+<h3 id="572-easy">572. 另一棵树的子树 easy</h3>
+<p>给你两棵二叉树 root 和 subRoot。检验 root 中是否包含和 subRoot 具有相同结构和节点值的子树。如果存在，返回 true；否则，返回 false。</p>
+<p>二叉树 tree 的一棵子树包括 tree 的某个节点和这个节点的所有后代节点。tree 也可以看做它自身的一棵子树。</p>
+<blockquote>
+<p>当前节点是否相等, 左子树是否包含相等, 右子树是否包含相等
+相等: 递归相等</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">isSubtree</span><span style="color: #f8f8f2">(TreeNode root, TreeNode subRoot) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> isEqual(root, subRoot) </span><span style="color: #ff79c6">||</span><span style="color: #f8f8f2"> isSubtree(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, subRoot) </span><span style="color: #ff79c6">||</span><span style="color: #f8f8f2"> isSubtree(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, subRoot);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">isEqual</span><span style="color: #f8f8f2">(TreeNode root, TreeNode subRoot) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> subRoot) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">||</span><span style="color: #f8f8f2"> subRoot </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> subRoot.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> isEqual(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, subRoot.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> isEqual(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, subRoot.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="offer-26-mid">剑指 Offer 26. 树的子结构 mid</h3>
+<p>输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构)</p>
+<p>B是A的子结构， 即 A中有出现和B相同的结构和节点值。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">isSubStructure</span><span style="color: #f8f8f2">(TreeNode A, TreeNode B) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (B </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (A </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (judge(A, B)) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> isSubStructure(A.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, B) </span><span style="color: #ff79c6">||</span><span style="color: #f8f8f2"> isSubStructure(A.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, B);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">judge</span><span style="color: #f8f8f2">(TreeNode A, TreeNode B) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (A </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> B) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (B </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (A </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (A.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> B.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> judge(A.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, B.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> judge(A.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, B.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="404-easy">404. 左叶子之和 easy</h3>
+<p>给定二叉树的根节点 root ，返回所有左叶子之和。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">sumOfLeftLeaves</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> sumOfLeftLeaves(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> sumOfLeftLeaves(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">sumOfLeftLeaves</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> isLeft) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (isLeft </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> sumOfLeftLeaves(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">+</span><span style="color: #f8f8f2"> sumOfLeftLeaves(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="814-mid">814. 二叉树剪枝 mid</h3>
+<p>给你二叉树的根结点 root ，此外树的每个结点的值要么是 0 ，要么是 1 。</p>
+<p>返回移除了所有<strong>不包含 1 的子树</strong>的原二叉树。</p>
+<p>节点 node 的子树为 node 本身加上所有 node 的后代。</p>
+<blockquote>
+<p>自底向上</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">pruneTree</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> pruneTree(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> pruneTree(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">else</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_6">层序遍历</h2>
+<h3 id="offer-32-iii-iii-mid">剑指 Offer 32 - III. 从上到下打印二叉树 III mid</h3>
+<p>请实现一个函数按照之字形顺序打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，第三行再按照从左到右的顺序打印，其他行以此类推。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">levelOrder</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;&gt;</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayDeque</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> odd </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> size </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> list </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            res.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(list);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (size</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                TreeNode node </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">                list.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (odd </span><span style="color: #ff79c6">^=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">) reverse(list);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">reverse</span><span style="color: #f8f8f2">(List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> list) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, j </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> j; i</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">, j</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            Integer temp </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(i);</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">set</span><span style="color: #f8f8f2">(i, list.</span><span style="color: #50fa7b">get</span><span style="color: #f8f8f2">(j));</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">set</span><span style="color: #f8f8f2">(j, temp);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="637-easy">637. 二叉树的层平均值 easy</h3>
+<p>给定一个非空二叉树的根节点 root , 以数组的形式返回每一层节点的平均值。与实际答案相差 10-5 以内的答案可以被接受。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Double</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">averageOfLevels</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Double</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+
+<span style="color: #f8f8f2">        Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root);</span>
+
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> size </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">double</span><span style="color: #f8f8f2"> sum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> cnt </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (size </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                TreeNode node </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">                size</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                sum </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                cnt</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            res.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(sum </span><span style="color: #ff79c6">/</span><span style="color: #f8f8f2"> cnt);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="513-mid">513. 找树左下角的值 mid</h3>
+<p>给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。</p>
+<p>假设二叉树中至少有一个节点。</p>
+<blockquote>
+<p>层序遍历, 不用管那一层</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">findBottomLeftValue</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> queue </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        queue.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root);</span>
+<span style="color: #f8f8f2">        TreeNode p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">queue.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> queue.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) queue.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(p.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) queue.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(p.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="515-mid">515. 在每个树行中找最大值 mid</h3>
+<p>给定一棵二叉树的根节点 root ，请找出该二叉树中每一层的最大值。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">largestValues</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> list </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> list;</span>
+<span style="color: #f8f8f2">        Queue</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">TreeNode</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> que </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> LinkedList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">que.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> size </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">size</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Integer.</span><span style="color: #50fa7b">MIN_VALUE</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (size</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                TreeNode node </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> que.</span><span style="color: #50fa7b">remove</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">                max </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">max</span><span style="color: #f8f8f2">(max, node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">                </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) que.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            list.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(max);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> list;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_7">前中后序遍历</h2>
+<p>递归实现</p>
+<h3 id="897-easy">897. 递增顺序搜索树 easy</h3>
+<p>给你一棵二叉搜索树的 root ，请你 按中序遍历 将其重新排列为一棵递增顺序搜索树，使树中最左边的节点成为树的根节点，并且每个节点没有左子节点，只有一个右子节点。</p>
+<blockquote>
+<p>中序遍历的过程中记一下前一个节点即可</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> TreeNode pre;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">increasingBST</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        TreeNode zero </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> TreeNode();</span>
+<span style="color: #f8f8f2">        pre </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> zero;</span>
+<span style="color: #f8f8f2">        midTraverse(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> zero.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">midTraverse</span><span style="color: #f8f8f2">(TreeNode node) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        midTraverse(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        pre.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> node;</span>
+<span style="color: #f8f8f2">        node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        pre </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> node;</span>
+<span style="color: #f8f8f2">        midTraverse(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p>非递归用栈, Deque</p>
+<h3 id="590-n-easy">590. N 叉树的后序遍历 easy</h3>
+<p>给定一个 n 叉树的根节点 root ，返回 其节点值的 后序遍历 。</p>
+<p>n 叉树 在输入中按层序遍历进行序列化表示，每组子节点由空值 null 分隔（请参见示例）。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">postorder</span><span style="color: #f8f8f2">(Node root) {</span>
+<span style="color: #f8f8f2">        List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayList</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        postorder(root, res);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">postorder</span><span style="color: #f8f8f2">(Node root, List</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> res) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (Node n : root.</span><span style="color: #50fa7b">children</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            postorder(n, res);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        res.</span><span style="color: #50fa7b">add</span><span style="color: #f8f8f2">(root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="bst">二叉查找树 BST</h2>
+<h3 id="offer-ii-053-mid">剑指 Offer II 053. 二叉搜索树中的中序后继 mid</h3>
+<p>给定一棵二叉搜索树和其中的一个节点 p ，找到该节点在树中的中序后继。如果节点没有中序后继，请返回 null 。</p>
+<p>节点 p 的后继是值比 p.val 大的节点中键值最小的节点，即按中序遍历的顺序节点 p 的下一个节点。</p>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">inorderSuccessor</span><span style="color: #f8f8f2">(TreeNode root, TreeNode p) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #6272a4">// 如果有右子树, 一定在右子树的最左边</span>
+<span style="color: #f8f8f2">            p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (p.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> p;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        TreeNode res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 二叉搜索树就这么用</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> p.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">                res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">                root </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            } </span><span style="color: #ff79c6">else</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">                root </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_8">验证遍历顺序合法性</h2>
+<h3 id="offer-33-mid">剑指 Offer 33. 二叉搜索树的后序遍历序列 mid</h3>
+<p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历结果。如果是则返回 true，否则返回 false。假设输入的数组的任意两个数字都互不相同。
+<strong>解法1: 递归</strong></p>
+<blockquote>
+<p>根据最后一个元素二分前面的元素</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">verifyPostorder</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> postorder) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> verifyPostorder(postorder, </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">, postorder.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">verifyPostorder</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> postorder, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> start, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> end) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (end </span><span style="color: #ff79c6">&lt;=</span><span style="color: #f8f8f2"> start) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> mid </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">end</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> p </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> start;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">p</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">end</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">) p</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> m </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> p;</span><span style="color: #6272a4">// 第一个大的值</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">p</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">end</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">) p</span><span style="color: #ff79c6">++</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> p </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> end </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> verifyPostorder(postorder, start, p </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> verifyPostorder(postorder, p, end </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>解法2:单调栈</strong></p>
+<blockquote>
+<p>left-&gt;right-&gt;root 逆序 root-&gt;right-&gt;left, 即 中-&gt;大-&gt;小
+那么可以用单调栈求解, 栈中元素单调增, 栈底元素为 root</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">boolean</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">verifyPostorder</span><span style="color: #f8f8f2">(</span><span style="color: #8be9fd">int</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> postorder) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> postorder.</span><span style="color: #50fa7b">length</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        Deque</span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> stack </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> ArrayDeque</span><span style="color: #ff79c6">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">        </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> root </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Integer.</span><span style="color: #50fa7b">MAX_VALUE</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 中 大 小</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">for</span><span style="color: #f8f8f2"> (</span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> i </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> n </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">1</span><span style="color: #f8f8f2">; i </span><span style="color: #ff79c6">&gt;=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">; i</span><span style="color: #ff79c6">--</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            </span><span style="color: #6272a4">// 比root大的元素已经从栈中移除了</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">false</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">            </span><span style="color: #ff79c6">while</span><span style="color: #f8f8f2"> (</span><span style="color: #ff79c6">!</span><span style="color: #f8f8f2">stack.</span><span style="color: #50fa7b">isEmpty</span><span style="color: #f8f8f2">() </span><span style="color: #ff79c6">&amp;&amp;</span><span style="color: #f8f8f2"> postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> stack.</span><span style="color: #50fa7b">element</span><span style="color: #f8f8f2">()) {</span>
+<span style="color: #f8f8f2">                root </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> stack.</span><span style="color: #50fa7b">pop</span><span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">            }</span>
+<span style="color: #f8f8f2">            stack.</span><span style="color: #50fa7b">push</span><span style="color: #f8f8f2">(postorder</span><span style="color: #ff79c6">[</span><span style="color: #f8f8f2">i</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">true</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="669-mid">669. 修剪二叉搜索树 mid</h3>
+<p>给你二叉搜索树的根节点 root，同时给定最小边界 low 和最大边界 high。通过修剪二叉搜索树，使得所有节点的值在 [low, high] 中。修剪树 不应该 改变保留在树中的元素的相对结构
+(即，如果没有被移除，原有的父代子代关系都应当保留)。 可以证明，存在 唯一的答案 。</p>
+<p>所以结果应当返回修剪好的二叉搜索树的新的根节点。注意，根节点可能会根据给定的边界发生改变。</p>
+<blockquote>
+<ol>
+<li>根节点在范围内</li>
+<li>根节点不在范围内</li>
+</ol>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">trimBST</span><span style="color: #f8f8f2">(TreeNode root, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> low, </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> high) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&gt;</span><span style="color: #f8f8f2"> high) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> trimBST(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, low, high);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">&lt;</span><span style="color: #f8f8f2"> low) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> trimBST(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, low, high);</span>
+
+<span style="color: #f8f8f2">        root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> trimBST(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">, low, high);</span>
+<span style="color: #f8f8f2">        root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> trimBST(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">, low, high);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="538-1038-mid">538. 1038. 把二叉搜索树转换为累加树 mid</h3>
+<p>给出二叉 搜索 树的根节点，该树的节点值各不相同，请你将其转换为累加树（Greater Sum Tree），使每个节点 node 的新值等于原树中大于或等于 node.val 的值之和。</p>
+<p>提醒一下，二叉搜索树满足下列约束条件：</p>
+<ul>
+<li>节点的左子树仅包含键 小于 节点键的节点。</li>
+<li>节点的右子树仅包含键 大于 节点键的节点。</li>
+<li>左右子树也必须是二叉搜索树。</li>
+</ul>
+<blockquote>
+<p>右根左就是倒序</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> sum </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ffb86c">0</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> TreeNode </span><span style="color: #50fa7b">convertBST</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        sum(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">sum</span><span style="color: #f8f8f2">(TreeNode node) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #6272a4">// 右 根 左</span>
+<span style="color: #f8f8f2">        sum(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> sum </span><span style="color: #ff79c6">+=</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        sum(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h3 id="530-easy">530. 二叉搜索树的最小绝对差 easy</h3>
+<p>给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。</p>
+<p>差值是一个正数，其数值等于两值之差的绝对值。</p>
+<blockquote>
+<p>中序遍历就是有序的</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> min </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Integer.</span><span style="color: #50fa7b">MAX_VALUE</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    Integer pre;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">int</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">getMinimumDifference</span><span style="color: #f8f8f2">(TreeNode root) {</span>
+<span style="color: #f8f8f2">        pre </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        dfs(root);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> min;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 中序遍历 全局 pre</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">private</span><span style="color: #f8f8f2"> </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">dfs</span><span style="color: #f8f8f2">(TreeNode node) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        dfs(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (pre </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            min </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> Math.</span><span style="color: #50fa7b">min</span><span style="color: #f8f8f2">(min, node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">-</span><span style="color: #f8f8f2"> pre);</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        pre </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> node.</span><span style="color: #50fa7b">val</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        dfs(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<h2 id="_9">修改树</h2>
+<h3 id="offer-36-mid">剑指 Offer 36. 二叉搜索树与双向链表 mid</h3>
+<p>输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的循环双向链表。要求不能创建任何新的节点，只能调整树中节点指针的指向。</p>
+<p><strong>解法1:中序遍历</strong></p>
+<blockquote>
+<p>全局维护 tail 和 head</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    Node tail, head;</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> Node </span><span style="color: #50fa7b">treeToDoublyList</span><span style="color: #f8f8f2">(Node root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        traversal(root);</span>
+<span style="color: #f8f8f2">        head.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> tail;</span>
+<span style="color: #f8f8f2">        tail.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> head;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> head;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd">void</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">traversal</span><span style="color: #f8f8f2">(Node node) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (node </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        traversal(node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (tail </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) head </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> node;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">else</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">            node.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> tail;</span>
+<span style="color: #f8f8f2">            tail.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> node;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        tail </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> node;</span>
+<span style="color: #f8f8f2">        traversal(node.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+<p><strong>解法2:后续遍历</strong></p>
+<blockquote>
+<p>把左右连起来</p>
+</blockquote>
+<div class="language-java highlight" style="background: #282a36"><pre style="line-height: 125%;"><span></span><code><span style="color: #8be9fd; font-style: italic">class</span> <span style="color: #50fa7b">Solution</span><span style="color: #f8f8f2"> {</span>
+<span style="color: #f8f8f2">    </span><span style="color: #8be9fd; font-style: italic">public</span><span style="color: #f8f8f2"> Node </span><span style="color: #50fa7b">treeToDoublyList</span><span style="color: #f8f8f2">(Node root) {</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root </span><span style="color: #ff79c6">==</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> res </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> traversal(root);</span>
+<span style="color: #f8f8f2">        res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> res</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">    }</span>
+
+<span style="color: #f8f8f2">    </span><span style="color: #6272a4">// 头尾</span>
+<span style="color: #f8f8f2">    Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> </span><span style="color: #50fa7b">traversal</span><span style="color: #f8f8f2">(Node root) {</span>
+<span style="color: #f8f8f2">        Node head </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root, tail </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">        Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> leftList </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            leftList </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> traversal(root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            head </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> leftList</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2"> rightList </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            rightList </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> traversal(root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">            tail </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> rightList</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (leftList </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            leftList</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">            root.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> leftList</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">1</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">if</span><span style="color: #f8f8f2"> (rightList </span><span style="color: #ff79c6">!=</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">null</span><span style="color: #f8f8f2">) {</span>
+<span style="color: #f8f8f2">            rightList</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">.</span><span style="color: #50fa7b">left</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> root;</span>
+<span style="color: #f8f8f2">            root.</span><span style="color: #50fa7b">right</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">=</span><span style="color: #f8f8f2"> rightList</span><span style="color: #ff79c6">[</span><span style="color: #ffb86c">0</span><span style="color: #ff79c6">]</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">        }</span>
+<span style="color: #f8f8f2">        </span><span style="color: #ff79c6">return</span><span style="color: #f8f8f2"> </span><span style="color: #ff79c6">new</span><span style="color: #f8f8f2"> Node</span><span style="color: #ff79c6">[]</span><span style="color: #f8f8f2">{head, tail};</span>
+<span style="color: #f8f8f2">    }</span>
+<span style="color: #f8f8f2">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "content.tabs.link", "content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
